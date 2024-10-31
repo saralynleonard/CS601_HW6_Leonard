@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 601 Assignment 6</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+    <script src="https://kit.fontawesome.com/29da9f6bf5.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.11/vue.global.min.js" integrity="sha512-jUvo4wLmasBQ4VBRwG9qkfOP/6GkSepADybOv52QFmqEYQlPx8ihGINjxQkiaH+ygvkI0XI2dMSvPs2BcFL5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./js/main.js" type="module"></script>
+</head>
+<body>
+    <h1>Assignment 6</h1>
+
+    <div id="app">
+        <div id="image-hover">
+            <img :src="image1"
+            @mouseover="changeImageDog('./images/golden_retriever_dog.jpg')"
+            @mouseover="changeImageDog('./images/golden_retriever_dog.jpg')"
+            @mouseout="changeImageDog('./images/golden_retriever_puppy.jpg')"
+            alt="golden retriever">
+
+            <img :src="image2"
+            @mouseover="changeImageCat('./images/cat.jpg')"
+            @mouseover="changeImageCat('./images/cat.jpg')"
+            @mouseout="changeImageCat('./images/kitten.jpg')" alt="">
+        </div>
+
+        <h3>Images Used in this Assignment</h3>
+        <div id="carousel">
+            <img :src="currentCarouselImage" alt="" />
+            <div>
+                <button @click="previousImage" :disabled="imageIndex === 0" id="prev-btn">
+                    <i class="fa-regular fa-chevron-left"></i>
+                </button>
+                <button @click="nextImage" :disabled="imageIndex === imageList.length -1">
+                    <i class="fa-regular fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+    
+
+</body>
+</html>
